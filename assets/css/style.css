@@ -580,7 +580,7 @@ img {
   }
 
   .work {
-    margin: 4rem 0;
+    margin-top: 4rem;
   }
 
   .work__container {
@@ -588,7 +588,7 @@ img {
   }
 
   .contact {
-    margin-bottom: 4rem;
+    margin: 4rem 0;
   }
 
   .contact__container {

@@ -782,7 +782,7 @@ img{
     }
 
     .contact {
-        margin-top: map-get($map: $margin-value, $key: mv-4);
+        margin: map-get($map: $margin-value, $key: mv-4) 0;
     }
     
     .contact__container {
