@@ -774,7 +774,7 @@ img{
     }
 
     .work {
-        margin: map-get($map: $margin-value, $key: mv-4) 0;
+        margin-top: map-get($map: $margin-value, $key: mv-4) 0;
     }
 
     .work__container {
@@ -782,7 +782,7 @@ img{
     }
 
     .contact {
-        margin-bottom: map-get($map: $margin-value, $key: mv-4);
+        margin-top: map-get($map: $margin-value, $key: mv-4);
     }
     
     .contact__container {
