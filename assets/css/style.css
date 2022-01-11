@@ -588,10 +588,11 @@ img {
   }
 
   .contact {
-    margin: 4rem 0;
+    margin-bottom: 4rem;
   }
 
   .contact__container {
+    padding-top: 4rem;
     flex-wrap: wrap;
   }
 

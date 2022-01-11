@@ -782,13 +782,11 @@ img{
     }
 
     .contact {
-        margin: map-get($map: $margin-value, $key: mv-4) 0;
+        margin-bottom: map-get($map: $margin-value, $key: mv-4);
     }
     
     .contact__container {
-        // align-self: center;
-        // justify-content: space-around;
-        // column-gap: 5rem;
+        padding-top: 4rem;
         flex-wrap: wrap;
     }
 
