@@ -124,6 +124,12 @@ themeButton.addEventListener('click', () => {
     localStorage.setItem('selected-theme', getCurrentTheme())
     document.getElementById('works').style.backgroundImage=""
 
+    const bgArea = document.getElementById('works')
+    const textColor = bgArea.querySelectorAll('.section__title-center, .work__title')
+    textColor.forEach((item) =>{
+        item.style.color=""
+    })
+
 })
 
 //nav menu
