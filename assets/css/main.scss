@@ -1,0 +1,639 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@100&display=swap');
+
+// $font-family: (
+//     ff-title: "'Josefin Slab', serif",
+//     ff-body: "'Poppins', sans-serif"
+// );
+// ??
+
+$font-family-title: 'Josefin Slab', serif;
+$font-family-body: 'Poppins', sans-serif;
+
+$font-size:(
+    fs-big: 10rem,
+    fs-h1: 2.5rem,
+    fs-h2: 1.5rem,
+    fs-h3: 1.25rem,
+    fs-normal: 1rem,
+    fs-small: .875rem,
+    fs-smaller: .75rem
+);
+
+$font-weight:(
+    fw-normal: 400,
+    fw-medium: 500,
+    fw-bold: 600,
+    fw-bolder: 700
+);
+
+$margin-value: (
+    mv-0-5: .5rem,
+    mv-0-75: .75rem,
+    mv-1: 1rem,
+    mv-1-5: 1.5rem,
+    mv-2: 2rem,
+    mv-2-5: 2.5rem,
+    mv-4: 4rem,
+    mv-section: 10rem
+);
+
+$z-index:(
+    zi-tooltip: 10,
+    zi-fixed: 100
+);
+
+
+// colors
+// Color Hunt: 
+// https://colorhunt.co/palette/1a374d4068826998abb1d0e0
+// https://colorhunt.co/palette/37066535589af14a16fc9918
+// https://colorhunt.co/palette/2e4c6d396eb0daddfcfc997c
+
+$colors: (
+    c-first: #396EB0,
+    c-first-alt: #406882,
+    c-first-light: #6998AB,
+    c-first-lighten: #B1D0E0,
+
+
+    c-title: #191919,
+    c-text: #666,
+    c-text-light: #999,
+    c-body: #fff,
+    // c-container: #fff
+
+    c-second:#30475E,
+    c-title-second: #999,
+    c-text-second: #666,
+    c-body-second: #040B34,
+
+);
+
+
+
+$header-height: 4rem;
+
+
+
+// Change Theme
+// body.dark-theme{
+//     $colors: (
+//         c-first: #7030A0,
+//         // c-first-alt: #406882,
+//         // c-first-light: #6998AB,
+//         // c-first-lighten: #B1D0E0,
+    
+//         c-title: #999,
+//         c-text: #666,
+//         // c-text-light: #999,
+//         c-body: #040B34,
+//         // c-container: #fff
+//     )
+//     // --first-color-dark: hsl(152, 8%, 20%);
+//     // --title-color: hsl(152, 4%, 95%);
+//     // --text-color: hsl(152, 4%, 75%);
+//     // --body-color: hsl(152, 8%, 12%);
+//     // --container-color: hsl(152, 8%, 16%);
+// }
+
+body.dark-theme{
+    background-color: map-get($map: $colors, $key: c-body-second);
+    color: map-get($map: $colors, $key: c-text-second);
+    // transition: .5s;
+
+    h1,h2,h3{
+        color: map-get($map: $colors, $key: c-title-second);
+        // font-weight: map-get($map: $font-weight, $key: fw-bold);
+    }
+
+    .home {
+        background-image: url(../img/work2.2.dark.png);
+    }
+
+    .work {
+        background-color: map-get($map: $colors, $key: c-second);
+    }
+}
+
+
+
+// basement
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background-color: map-get($map: $colors, $key: c-body);
+    color: map-get($map: $colors, $key: c-text);
+    transition: .5s;
+}
+
+body, button, input, textarea {
+    font-family: $font-family-body;
+    font-size: map-get($map: $font-size, $key: fs-normal);
+}
+
+h1,h2,h3{
+    color: map-get($map: $colors, $key: c-title);
+    font-weight: map-get($map: $font-weight, $key: fw-bold);
+}
+
+button{
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+
+// header
+.header {
+    width: 100%;
+    background-color: map-get($map: $colors, $key: c-body);
+    position: fixed;
+    top: -100%;
+    left: 0;
+    z-index: map-get($map: $z-index, $key: zi-fixed);
+    // display: none;
+    opacity: .7;
+    transition: .5s;
+}
+
+//header after scroll
+.scroll-header-show{
+    top: 0;
+}
+
+.scroll-header-shadow{
+    box-shadow: 0 10px 4px #2528261a;
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 968px;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 3rem;
+    height: $header-height;
+}
+
+.nav__list {
+    display: flex;
+    flex-direction: row;
+    column-gap: 3rem;
+}
+
+.nav__menu {
+    margin-left: auto;
+}
+
+.nav__link {
+    color: map-get($map: $colors, $key: c-title);
+    font-weight: map-get($map: $font-weight, $key: fw-medium);
+    transition: .4s;
+}
+
+.nav__link:hover{
+    color: map-get($map: $colors, $key: c-first);
+}
+
+.nav__logo {
+    font-weight: map-get($map: $font-weight, $key: fw-bolder);
+    letter-spacing: -1px;
+    color: map-get($map: $colors, $key: c-title);
+    transition: .4s;
+}
+
+.nav__logo:hover{
+    color: map-get($map: $colors, $key: c-first);
+}
+
+.active-link {
+    position: relative;
+    color: map-get($map: $colors, $key: c-first);
+}
+
+.active-link::after{
+    content: '';
+    position: absolute;
+    bottom: -.5rem;
+    left: 0;
+    width: 1rem;
+    height: 2px;
+    background-color: map-get($map: $colors, $key: c-first);
+}
+
+
+//theme change
+.change-theme{
+    color: map-get($map: $colors, $key: c-title);
+    font-size: 1.15rem;
+}
+  
+.nav__btns{
+    display: inline-flex;
+    align-items: center;
+    column-gap: 1rem;
+}
+
+
+
+
+// main
+.main {
+    overflow: hidden;
+}
+
+.flex-container {
+    display: flex;
+    align-items: center;
+}
+
+.flex-container-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section {
+    // margin-top: map-get($map: $margin-value, $key: mv-section);
+}
+
+.section__title {
+    font-size: map-get($map: $font-size, $key: fs-h1);
+    margin-bottom: map-get($map: $margin-value, $key: mv-2);
+    line-height: 1.4;
+}
+
+.section__title-center {
+    text-align: center;
+    font-size: map-get($map: $font-size, $key: fs-h1);
+    margin-bottom: map-get($map: $margin-value, $key: mv-2);
+    line-height: 1.4;
+}
+
+.section__subtitle{
+    font-size: map-get($map: $font-size, $key: fs-normal);
+    font-weight: map-get($map: $font-weight, $key: fw-medium);
+    color: map-get($map: $colors, $key: c-text);
+    margin-bottom: map-get($map: $margin-value, $key: mv-0-5);
+}
+
+
+//button
+.button {
+    font-weight: map-get($map: $font-size, $key: fw-medium);
+    background-color: map-get($map: $colors, $key: c-first);
+    color: #FFF;
+    padding: 1rem 2rem;
+    border-radius: .4rem;
+    transition: .3s;
+}
+
+.button:hover{
+    background-color: map-get($map: $colors, $key: c-first-alt);
+}
+
+.button:hover .button__icon-down{
+    transform: translateY(.25rem);
+}
+
+.button:hover .button__icon-right{
+    transform: translateX(.25rem);
+}
+
+.button__icon {
+    transition: .3s;
+}
+
+.button--flex{
+    display: flex; //why no transform without flex?
+    align-items: center;
+    column-gap: .4rem;
+}
+
+.button--link {
+    display: inline-flex;
+    color: map-get($map: $colors, $key: c-first);
+    font-weight: map-get($map: $font-weight, $key: fw-medium);
+}
+
+.button--link:hover .button__icon-left-down{
+    transform: translate(-.25rem, .25rem);
+}
+
+
+//home
+.home {
+    height: 100vh;
+    // display: flex;
+    // align-items: center;
+    background-image: url("../img/work1.2.png");
+    background-repeat: no-repeat;
+    // background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+.home__title {
+    font-size: map-get($map: $font-size, $key: fs-big);
+    // text-align: center;
+    margin-bottom: map-get($map: $margin-value, $key: mv-2);
+    line-height: 100%;
+}
+
+.home__title-blur {
+    font-family: $font-family-title;
+    font-weight: map-get($map: $font-weight, $key: fw-medium);
+}
+
+.home__character-blur {
+    filter: blur(4px);
+}
+
+.home__characters-blur {
+    transition: .5s;
+}
+
+.home__description {
+    margin-bottom: map-get($map: $margin-value, $key: mv-4);
+}
+
+
+//about
+.about {
+    height: 100vh;
+}
+
+.about__container {
+    display: flex;
+    // flex-wrap: wrap;
+    column-gap: 5rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.about__img {
+    width: 380px;
+}
+
+.about__description {
+    margin-bottom: map-get($map: $margin-value, $key: mv-1-5);
+}
+
+.about__details {
+    margin-bottom: map-get($map: $margin-value, $key: mv-1-5);
+}
+
+.about__details-description {
+    display: inline-flex;
+    // align-items: center;
+    column-gap: .5rem;
+    margin-bottom: map-get($map: $margin-value, $key: mv-0-5);
+    font-size: map-get($map: $font-size, $key: fs-small);
+}
+
+.about__details-icon {
+    font-size: 1rem;
+    color: map-get($map: $colors, $key: c-first);
+    margin-top: .15rem;
+}
+
+
+//works
+.work {
+    height: 100vh;
+    background-color: map-get($map: $colors, $key: c-first-lighten);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    transition: 1.5s;
+    // backgroundi
+    // transform: rotate(90deg);
+    // -webkit-transform: rotate(90deg);
+}
+
+.work__img{
+    width: 300px;
+    margin-bottom: map-get($map: $margin-value, $key: mv-0-75);
+    transition: .3s;
+}
+
+.work__cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    column-gap: 34px;
+}
+
+.work__card:hover .work__img{
+    transform: translateY(-.5rem);
+}
+
+.work__title {
+    margin-bottom: map-get($map: $margin-value, $key: mv-1);
+    font-size: map-get($map: $font-size, $key: fs-normal);
+    font-weight: map-get($map: $font-weight, $key: fw-bold);
+    color: map-get($map: $colors, $key: c-title);
+    text-align: center;
+}
+
+.work__data {
+    margin-bottom: map-get($map: $margin-value, $key: mv-2);
+}
+
+
+//contact
+//why squeeze when flex?
+.contact {
+    height: 100vh;
+} 
+
+.contact__container {
+    // align-self: center;
+    display: flex;
+    // justify-content: space-around;
+    // column-gap: 5rem;
+    // flex-wrap: wrap;
+}
+
+.contact__data, .contact__form {
+    flex: 1 1 0;
+    // flex-shrink: 0;
+    // flex-grow: 1;
+}
+
+.contact__information{
+    margin-bottom: map-get($map: $margin-value, $key: mv-2);
+}
+
+.contact__description{
+    display: inline-flex;
+    align-items: center;
+    column-gap: .5rem;
+    color: map-get($map: $colors, $key: c-title);
+    font-weight: map-get($map: $font-weight, $key: fw-medium);
+}
+
+.contact__icon{
+    font-size: 1.5rem;
+}
+
+.contact__inputs {
+    margin-bottom: map-get($map: $margin-value, $key: mv-2-5);
+}
+
+.contact__content {
+    position: relative;
+    height: 3rem;
+    margin-bottom: map-get($map: $margin-value, $key: mv-2);
+    border-bottom: 1px solid map-get($map: $colors, $key: c-text-light);
+}
+
+.contact__input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 1rem 1rem 1rem 0;
+    background: none;
+    color: map-get($map: $colors, $key: c-text);
+    border: none;
+    outline: none;
+    z-index: 1;
+}
+
+.contact__label {
+    position: absolute;
+    top: .75rem;
+    width: 100%;
+    font-size: map-get($map: $font-size, $key: fs-small);
+    color: map-get($map: $colors, $key: c-text-light);
+    transition: .3s;
+}
+
+.contact__area {
+    height: 7rem;
+    & textarea {
+    resize: none;
+    }
+}
+  
+// .contact__area textarea {
+//     resize: none;
+// }
+
+.contact__input:focus + .contact__label{
+    top: -.75rem;
+    left: 0;
+    font-size: map-get($map: $font-size, $key: fs-smaller);
+    z-index: 10;
+}
+  
+// grammarly extension?
+.contact__input:not(:placeholder-shown).contact__input:not(:focus) + .contact__label{
+    top: -.75rem;
+    font-size: map-get($map: $font-size, $key: fs-smaller);
+    z-index: 10;
+}
+
+
+//footer
+.footer {
+    position: relative;
+
+    &__container {
+        position: absolute;
+        top: -2rem;
+        width: 100%;
+    }
+
+    &__copy {
+        text-align: center;
+        font-size: map-get($map: $font-size, $key: fs-small);
+        color: map-get($map: $colors, $key: c-text-light);
+    }
+
+}
+
+// .footer__container {
+//     position: absolute;
+//     top: -2rem;
+//     width: 100%;
+// }
+
+// .footer__copy {
+//     text-align: center;
+//     font-size: map-get($map: $font-size, $key: fs-small);
+//     color: map-get($map: $colors, $key: c-text-light);
+// }
+
+
+//scroll up button
+.scroll-up {
+    position: fixed;
+    right: 3rem;
+    bottom: -30%;
+    background-color: map-get($map: $colors, $key: c-first);
+    padding: .5rem;
+    border-radius: .25rem;
+    display: inline-flex;
+    z-index: map-get($map: $z-index, $key: zi-tooltip);
+    opacity: .7;
+    transition: .4s;
+}
+  
+.scroll-up:hover{
+    background-color: map-get($map: $colors, $key: c-first-alt);
+    opacity: 1;
+}
+  
+.show-scroll {
+    bottom: 3rem;
+}
+  
+.scroll-up__icon {
+    font-size: 1rem;
+    color: #FFF;
+}
+
+
+
+
+//scroll bar
+::-webkit-scrollbar{
+    width: .6rem;
+    background: hsl(152, 4%, 53%);
+}
+  
+::-webkit-scrollbar-thumb{
+    background: hsl(152, 4%, 29%);
+    border-radius: .5rem;
+}

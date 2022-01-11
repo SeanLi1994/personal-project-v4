@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <link rel="icon" type="image/x-icon" href="./assets/img/favicon.svg">
+    
+    <title>BLUR Design</title>
+</head>
+<body>
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#" class="nav__logo">
+                BLUR Design
+            </a>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="#home" class="nav__link active-link">Home</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#about" class="nav__link">About</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#works" class="nav__link">Works</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#contact" class="nav__link">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="nav__btns">
+                <a href="#" class="change-theme" id="theme-button">Magic</a>
+                <!-- <div class="nav__toggle" id="nav-toggle">
+                    <i class="ri-menu-line"></i>
+                </div> -->
+            </div>
+        </nav>
+    </header>
+
+    <!-- main -->
+    <main class="main">
+
+        <!-- home -->
+        <section class="home section flex-container" id="home">
+            <div class="container flex-container-column">
+                <h1 class="home__title section__title-center">
+                    B L U R<br>
+                    <span class="home__title-blur"><span class="home__character-blur">D</span><span class="home__characters-blur" id="home__characters-blur">esign</span></span>
+                </h1>
+                <p class="home__description">
+                    much stronger sense of space
+                </p>
+                <a href="#about" class="button home__button button--flex">
+                    Explore <i class="ri-arrow-down-line button__icon button__icon-down"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- about -->
+        <section class="about section flex-container" id="about">
+            <div class="about__container container">
+                <img class="about__img" src="./assets/img/cactus.png" alt="a cactus holding a flower">
+
+                <div class="about__data">
+                    <h2 class="section__title">
+                        Hello there,<br> I'm Mr. Cactus
+                    </h2>
+
+                    <p class="about__description">
+                        I have some tricks for you to create simple blur design works.
+                    </p>
+
+                    <ul class="about__details">
+                        <li class="about__details-description">
+                            <i class="ri-checkbox-circle-line about__details-icon"></i>
+                            Firstly, create or download a low-resolution picture, better within 100 KB. 
+                        </li>
+                        <li class="about__details-description">
+                            <i class="ri-checkbox-circle-line about__details-icon"></i>
+                            Secondly, insert the picture in a Microsoft Powerpoint slide.
+                        </li>
+                        <li class="about__details-description">
+                            <i class="ri-checkbox-circle-line about__details-icon"></i>
+                            Thirdly, stretch the picture to cover the whole canvas.
+                        </li>
+                        <li class="about__details-description">
+                            <i class="ri-checkbox-circle-line about__details-icon"></i>
+                            Lastly, choose from Picture Format --> Artistic Effects  --> Blur --> adjust Radius.
+                        </li>
+                        <li class="about__details-description">
+                            <i class="ri-checkbox-circle-line about__details-icon"></i>
+                            Boom! Here it is~
+                        </li>
+                    </ul>
+
+                    <p class="about__description">
+                        Watch out!<br>
+                        I'm gonna blur awayyyyyyy!
+                    </p>
+
+                    <a href="#works" class="button--link button--flex">
+                        My works<i class="ri-arrow-left-down-line button__icon button__icon-left-down"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- works -->
+        <section class="work section flex-container" id="works">
+            <div class="container work__container flex-container-column">
+                <div class="work__data">
+                    <h2 class="section__title-center" id="color-change">
+                        My Works
+                    </h2>
+                    <p class="work__description">
+                        Click on each picture to see the changes!
+                    </p>
+                </div>
+                <div class="work__cards">
+                    <article class="work__card">
+                        <img src="./assets/img/work1.1.png" alt="man and woman floating on the water" class="work__img">
+                        <h3 class="work__title">Space</h3>
+                    </article>
+                    <article class="work__card">
+                        <img src="./assets/img/work2.1.dark.png" alt="purple triangle on a black background" class="work__img">
+                        <h3 class="work__title">Spotlight</h3>
+                    </article>
+                    <article class="work__card">
+                        <img src="./assets/img/work3.1.png" alt="SpongeBob SquarePants" class="work__img">
+                        <h3 class="work__title">Enthusiasm</h3>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- contact -->
+        <section class="contact section flex-container" id="contact">                
+            <div class="container contact__container">
+                <div class="contact__data">
+                    <h2 class="section__title">
+                        If you'd like to share some secrets,<br>here I'am!
+                    </h2>
+
+                    <div class="contact__method">
+                        <div class="contact__information">
+                            <h3 class="section__subtitle">Phone</h3>
+                            <p class="contact__description">
+                                <i class="ri-phone-line contact__icon"></i>
+                                +04 33 666 999
+                            </p>
+                        </div>
+
+                        <div class="contact__information">
+                            <h3 class="section__subtitle">Email</h3>
+                            <p class="contact__description">
+                                <i class="ri-mail-line contact__icon"></i>
+                                user@email.com
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <form action="" class="contact__form">
+                    <div class="contact__inputs">
+                        <div class="contact__content">
+                            <input type="email" placeholder=" " class="contact__input">
+                            <label for="" class="contact__label">Email</label>
+                        </div>
+
+                        <div class="contact__content">
+                            <input type="text" placeholder=" " class="contact__input">
+                            <label for="" class="contact__label">Subject</label>
+                        </div>
+
+                        <div class="contact__content contact__area">
+                            <textarea name="message" placeholder=" " class="contact__input"></textarea>                              
+                            <label for="" class="contact__label">Message</label>
+                        </div>
+                    </div>
+
+                    <button class="button button--flex">
+                        Send Message
+                        <i class="ri-chat-smile-3-line button__icon button__icon-right"></i>
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer class="footer container">
+        <div class="footer__container">
+            <hr>
+            <p class="footer__copy">© All rights reserved 2021.</p>
+        </div>
+    </footer>
+    
+    
+    <a href="#" class="scroll-up" id="scroll-up"> 
+        <i class="ri-arrow-up-fill scroll-up__icon"></i>
+    </a>
+
+    <script src="./assets/js/scrollreveal.min.js"></script>
+    
+    <script src="./assets/js/javascript.js"></script>
+
+</body>
+</html>
