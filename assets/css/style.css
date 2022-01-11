@@ -489,6 +489,10 @@ img {
     justify-content: center;
   }
 
+  .home__description, .work__description {
+    text-align: center;
+  }
+
   .about__container {
     column-gap: 0;
   }
@@ -562,6 +566,10 @@ img {
     flex-wrap: wrap;
   }
 
+  .about__img {
+    width: auto;
+  }
+
   .about__data {
     margin-top: -2.5rem;
   }
@@ -603,6 +611,15 @@ img {
 
   .contact__button {
     align-self: center;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .nav__logo {
+    font-size: 0.75rem;
+  }
+
+  .home__title {
+    font-size: 4rem;
   }
 }
 

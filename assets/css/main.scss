@@ -672,6 +672,11 @@ img{
     .home {
         justify-content: center;
     }
+
+    .home__description, .work__description {
+        text-align: center;
+    }
+
     .about__container {
         column-gap: 0;
     }
@@ -697,6 +702,7 @@ img{
     .nav__logo {
         display: inline-block;
     }
+
     .nav__toggle, .nav__close{
         display: inline-flex;
         color: map-get($map: $colors, $key: c-title);
@@ -743,7 +749,7 @@ img{
     }
 
     .home__title {
-        font-size: map-get($map: $font-size, $key: fs-big)/2;
+        font-size: calc(map-get($map: $font-size, $key: fs-big) / 2);
     }
 
     .section__title {
@@ -754,6 +760,10 @@ img{
 
     .about__container {
         flex-wrap: wrap;
+    }
+
+    .about__img {
+        width: auto;
     }
 
     .about__data {
@@ -802,4 +812,10 @@ img{
 }
 
 @media only screen and (max-width: 320px) {
+    .nav__logo {
+        font-size: map-get($map: $font-size, $key: fs-smaller);
+    }
+    .home__title {
+        font-size: 4rem;
+    }
 }
