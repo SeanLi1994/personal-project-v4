@@ -61,12 +61,14 @@ $colors: (
     c-text: #666,
     c-text-light: #999,
     c-body: #fff,
-    // c-container: #fff
+    c-container: #fff,
 
     c-second:#30475E,
+    c-second-alt: #7030A0,
     c-title-second: #999,
     c-text-second: #666,
     c-body-second: #040B34,
+    c-container-second: #262c29,
 
 );
 
@@ -113,6 +115,22 @@ body.dark-theme{
 
     .work {
         background-color: map-get($map: $colors, $key: c-second);
+    }
+
+    .contact__description{
+        color: map-get($map: $colors, $key: c-title-second);
+    }
+    
+    .button {
+        opacity: .7;
+    }
+
+    .header, .nav__menu {
+        background-color: map-get($map: $colors, $key:c-container-second );
+    }
+
+    .nav__link, .nav__logo, .nav__toggle, .nav__close, .change-theme{
+        color: #fff;
     }
 }
 
@@ -280,9 +298,9 @@ img{
     align-items: center;
 }
 
-.section {
-    // margin-top: map-get($map: $margin-value, $key: mv-section);
-}
+// .section {
+//     margin-bottom: map-get($map: $margin-value, $key: mv-section);
+// }
 
 .section__title {
     font-size: map-get($map: $font-size, $key: fs-h1);
@@ -636,4 +654,154 @@ img{
 ::-webkit-scrollbar-thumb{
     background: hsl(152, 4%, 29%);
     border-radius: .5rem;
+}
+
+//responsive
+//big screen
+.nav__toggle, .nav__close{
+    display: none;
+}
+
+
+//small screen
+@media only screen and (max-width: 968px) {
+    .container {
+        margin: 0 map-get($map: $margin-value, $key: mv-2);
+    }
+
+    .home {
+        justify-content: center;
+    }
+    .about__container {
+        column-gap: 0;
+    }
+
+    .about__img {
+        width: 200px;
+    }
+    
+    .about__img, .about__data{
+        flex: 1 1 0;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    // .nav {
+    //     height: $header-height - 1.5rem;
+    // }
+
+    // .header {
+    //     opacity: 1;
+    // }
+
+    .nav__logo {
+        display: inline-block;
+    }
+    .nav__toggle, .nav__close{
+        display: inline-flex;
+        color: map-get($map: $colors, $key: c-title);
+        font-size: map-get($map: $font-size, $key: fs-h2);
+    }
+
+    .nav__menu{
+        display: flex;
+        justify-content: center;
+        padding-top: 6rem;
+        position: fixed;
+        background-color: map-get($map: $colors, $key: c-body);
+        width: 60%;
+        height: 100vh;
+        top: 0;
+        right: -100%;
+        z-index: map-get($map: $z-index, $key: zi-fixed);
+        box-shadow: -5px 0 10px #2528261a;
+        border-radius: 1rem 0 0 1rem;
+        transition: .3s;
+        
+    }
+
+    .nav__list {
+        display: inline-flex;
+        flex-direction: column;
+        row-gap: 1.5rem;
+    }
+
+    .nav__close{
+        font-size: 1.5rem;
+        position: absolute;
+        top: 1.25rem;
+        right: 2rem;
+    }
+
+    .menu-show {
+        right: 0;
+    }
+
+
+    .about, .work, .contact {
+        height: auto;
+    }
+
+    .home__title {
+        font-size: map-get($map: $font-size, $key: fs-big)/2;
+    }
+
+    .section__title {
+        font-size: map-get($map: $font-size, $key: fs-h2);
+        margin-bottom: map-get($map: $margin-value, $key: mv-1);
+
+    }
+
+    .about__container {
+        flex-wrap: wrap;
+    }
+
+    .about__data {
+        margin-top: - map-get($map: $margin-value, $key: mv-2-5);
+    }
+
+    .about__description {
+        margin-bottom: map-get($map: $margin-value, $key: mv-1);
+    }
+
+    .about__details {
+        margin-bottom: map-get($map: $margin-value, $key: mv-1);
+    }
+
+    .about__button {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .work {
+        margin: map-get($map: $margin-value, $key: mv-4) 0;
+    }
+
+    .work__container {
+        padding: 4rem 0;
+    }
+
+    .contact {
+        margin-bottom: map-get($map: $margin-value, $key: mv-4);
+    }
+    
+    .contact__container {
+        // align-self: center;
+        // justify-content: space-around;
+        // column-gap: 5rem;
+        flex-wrap: wrap;
+    }
+
+    .contact__form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contact__button {
+        // text-align: center;
+        align-self: center;
+    } 
+}
+
+@media only screen and (max-width: 320px) {
 }

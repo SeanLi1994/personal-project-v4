@@ -12,8 +12,8 @@ const sr = ScrollReveal({
 sr.reveal(`.home__title`)
 sr.reveal(`.home__description`, {delay: 500})
 sr.reveal(`.home__button`, {delay: 600})//??? clash with transition
-sr.reveal(`.about__data, .contact__data`,{origin: 'left'})
-sr.reveal(`.about__img, .contact__form`,{origin: 'right'})
+sr.reveal(`.about__data, .contact__data`,{origin: 'right'})
+sr.reveal(`.about__img, .contact__form`,{origin: 'left'})
 sr.reveal(`.work__card, .footer__container`,{interval: 100, origin: 'bottom'})
 
 //header show and shadow
@@ -125,3 +125,32 @@ themeButton.addEventListener('click', () => {
     document.getElementById('works').style.backgroundImage=""
 
 })
+
+//nav menu
+const navMenu = document.getElementById('nav-menu'),
+      navToggle = document.getElementById('nav-toggle'),
+      navClose = document.getElementById('nav-close'),
+      headerSetting = document.getElementById('header')
+
+if(navToggle){
+    navToggle.addEventListener('click', () =>{
+        navMenu.classList.add('menu-show')
+        headerSetting.style.opacity=".9"
+    })
+}
+
+if(navClose){
+    navClose.addEventListener('click', () =>{
+        navMenu.classList.remove('menu-show')
+        headerSetting.style.opacity=""
+    })
+}
+
+const navLink = document.querySelectorAll('.nav__link')
+
+function linkAction(){
+    const navMenu = document.getElementById('nav-menu')
+    navMenu.classList.remove('menu-show')
+    headerSetting.style.opacity=""
+}
+navLink.forEach(n => n.addEventListener('click', linkAction))
