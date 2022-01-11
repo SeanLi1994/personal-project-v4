@@ -774,7 +774,7 @@ img{
     }
 
     .work {
-        margin-top: map-get($map: $margin-value, $key: mv-4) 0;
+        margin-top: map-get($map: $margin-value, $key: mv-4);
     }
 
     .work__container {
